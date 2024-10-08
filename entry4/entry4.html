@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>years</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 100px;
+            margin: 0;
+            height: 100vh;
+            background: linear-gradient(rgba(0, 42, 255, 0.656), rgb(255, 172, 124)),url('2 2.webp') no-repeat center center fixed;
+            background-size: cover;
+            overflow: hidden;
+        }
+        input {
+            margin-top: 200px;
+            font-size: 300px;
+            width: 800px;
+            height:300px;
+            text-align: center;
+            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            background-color: transparent; 
+            color:rgb(111, 152, 255);
+            border:none;
+            -webkit-appearance: none;
+            transition: transform 0.3s ease;
+            -moz-appearance: textfield; 
+        }
+        input::-webkit-inner-spin-button,
+        input::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            
+        }
+
+        input:hover{
+            color:rgb(255, 234, 176);
+            transform: scale(1.2)
+            
+        }
+
+        button {
+            font-size: 100px;
+            margin: 0 10px;
+            background-color: transparent; 
+            border:none;
+        }
+
+        button.decrease {
+            color: rgb(232, 229, 255);
+        }
+        button.increase {
+            color: rgb(255, 181, 44);
+        }
+        
+    
+
+    </style>
+</head>
+<body>
+
+    <button class="decrease" onclick="decrease()">-</button>
+    <input type="number" id="numberInput" value="2014" readonly>
+    <button class="increase" onclick="increase()">+</button>
+
+    <script>
+        function increase() {
+            let input = document.getElementById('numberInput');
+            let currentValue = parseInt(input.value);
+            if (currentValue < 2024) {
+                input.value = currentValue + 1;
+            }
+        }
+
+        function decrease() {
+            let input = document.getElementById('numberInput');
+            let currentValue = parseInt(input.value);
+            if (currentValue > 2014) {
+                input.value = currentValue - 1;
+            }
+        }
+    </script>
+</div>
+
+</body>
+</html>
