@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2017</title>
+  <style>
+    @font-face {
+      font-family: 'Bold';  
+      src: url('Montserrat-Bold.ttf');  
+    }
+    @font-face {
+      font-family: 'Medium';  
+      src: url('Montserrat-Medium.ttf');  
+    }
+
+    html {
+      cursor: url(images/cursor.png), auto;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Medium';
+      background-color: #f7f7f7;
+      color: black;
+    }
+
+    a {
+      text-decoration: none;
+      color: black;
+    }
+
+    .return, .next-year {
+      cursor: url(images/cursor1.png), auto;
+      transition: color 0.3s ease;
+    }
+    .return:hover, .next-year:hover {
+      color: rgb(137, 188, 255);
+    }
+
+    .top {
+      transform: rotate(90deg);          
+      transform-origin: left top;        
+      white-space: nowrap;               
+      font-size: 26px;
+      position: fixed;                  
+      top: 60%;                          
+      left: 99%;                         
+      padding: 20px;
+      z-index: 1002;
+      font-family: 'Bold';
+      cursor: url(images/cursor1.png), auto;
+      color: rgb(255, 221, 53);
+      mix-blend-mode: difference;
+    }
+
+    .heading {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: 'Bold';
+      font-size: 20px;
+      padding: 20px;
+      background-color: rgb(255, 0, 136);
+      color: black;
+      z-index:2000;
+    }
+
+    .text {
+      font-size: 350px;
+      font-family: 'Bold';
+      position: fixed;
+      top: 50px;
+      left: 0px;
+      color: rgb(144, 255, 59);
+      z-index: 999;
+      mix-blend-mode: hard-light;
+    }
+
+    .content-wrapper {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 30px;
+      padding: 20px;
+    }
+
+    .content-section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background-color: white;
+      border: 1px solid #ddd;
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    .image {
+      width: 100%;
+      height: 300px;
+      background-size: cover;
+      background-position: center;
+      border-radius: 10px;
+      margin-bottom: 15px;
+    }
+
+    .content {
+      font-size: 18px;
+      line-height: 1.6;
+    }
+
+    .title {
+      font-size: 28px;
+      font-family: 'Bold';
+      color: rgb(255, 59, 196);
+      margin-top: 10px;
+      text-align: center;
+    }
+
+    .imageone {
+      background-image: url('images/1.jpg');
+    }
+    .imagetwo {
+      background-image: url('images/2.webp');
+    }
+  </style>
+</head>
+<body>
+  <div class="text">2021</div>
+
+  <div class="heading">
+    <a href="../entry4/index.html"><div class="return">Return To Year Selector</div></a>
+    <div><span style="color:rgb(238, 211, 0)">#</span></div>
+    <div>2021</div>
+    <a href="../entry5/index.html"><div class="next-year">2022</div></a>
+  </div>
+
+  <a href="#"><div class="top">————Back To Top</div></a>
+
+  <div class="content-wrapper">
+    <div class="content-section">
+      <div class="image imageone"></div>
+      <div class="content">"Tennessee Bird Walk" is a 1970 novelty single by the country music husband-and-wife duo Jack Blanchard & Misty Morgan. The single was the duo's second release on the country charts and became their most successful single. "Tennessee Bird Walk" went to number one on the country charts for two weeks and spent a total of sixteen weeks on the chart. The single also crossed over to the Top 40 peaking at number twenty-three.</div>
+      <div class="title">Misty Morgan: Tennessee Bird Walk</div>
+    </div>
+
+    <div class="content-section">
+      <div class="image imagetwo"></div>
+      <div class="content">Oil of Every Pearl's Un-Insides (stylized in all caps) is the debut studio album by English recording artist and producer Sophie and the only one to be released during her lifetime. It was released on 15 June 2018, through Transgressive, Future Classic and Sophie's own label, MSMSMSM.</div>
+      <div class="title">Sophie: Oil of Every Pearl's Un-Insides</div>
+    </div>
+
+
+  </div>
+</body>
+</html>

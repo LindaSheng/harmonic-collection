@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2020</title>
+  <style>
+    @font-face {
+    font-family: 'Bold';  
+    src: url('Montserrat-Bold.ttf');  
+    }
+    @font-face {
+    font-family: 'Medium';  
+    src: url('Montserrat-Medium.ttf');  
+    }
+        html{
+            cursor: url(images/cursor.png),auto;
+            background-color: #ffffff;
+        }
+        a {
+        text-decoration: none;
+        color:black;
+            }
+            .heading{
+            display: flex;
+            justify-content: space-between;
+            font-family:'Bold';
+            font-size: 20px;
+            z-index: index 1000;;
+            position:absolute;
+            margin-top: 0px;
+            transition:0.3s ease;
+            padding:20px;
+            width: 100vw;
+            color:black;
+            background-color: #ffc533;
+        }
+        .return{
+             cursor: url(images/cursor1.png),auto;
+        }
+        .return:hover{
+            color: rgb(137, 188, 255);
+        }
+        .next-year:hover{
+            color: rgb(137, 188, 255);
+
+        }
+        .next-year{
+          cursor: url(images/cursor1.png),auto;
+        }
+        .text{
+            font-size: 250px;
+            font-family:'Bold';
+            position: fixed;
+            top:70px;
+            right:0px;
+            transition: color 0.3s ease;
+            color:rgb(255, 218, 35);
+            mix-blend-mode: difference;
+            z-index: 50;
+        }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      display: flex;
+      height: 100vh;
+      font-family: Arial, sans-serif;
+    }
+
+    .left {
+    font-size:200px;
+    font-family: bold;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: left;
+      margin-left: 50px;
+      margin-top: 60px;
+      margin-right: 70px;
+    }
+
+    .title {
+    font-size:40px;
+    font-family: bold;
+      margin: 20px;
+      transition: transform 0.3s ease, color 0.3s ease;
+    }
+
+    .title.active {
+        font-size:40px;
+    font-family: bold;
+      transform: scale(1.2);
+      color: #ff8800;
+    }
+
+    .right {
+    margin-top: 70px;
+      flex: 2;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #ddd;
+      position: relative;
+    }
+
+    .slider {
+      display: flex;
+      transition: transform 0.5s ease;
+      height: 100%;
+      width: 100%;
+    }
+
+    .slide {
+      min-width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 36px;
+      color: #fff;
+    }
+
+    .slide:nth-child(1) {
+      background-image: url('images/1.jpg');
+      background-size:cover;
+    }
+
+    .slide:nth-child(2) {
+      background-image: url('images/2.jpg');
+      background-size:cover;
+    }
+
+    .slide:nth-child(3) {
+        background-image: url('images/3.jpg');
+        background-size:cover;
+    }
+
+  </style>
+</head>
+<body>
+    <div class="heading">
+        <a href="../entry4/index.html"><div class="return">Return To Year Selector</div></a>
+        <div><span style="color:rgb(238, 211, 0)">#</span></div>
+        <div> 2020</div>
+        <a href="../entry 9/index.html"><div class="next-year">2021</div></a>
+    </div>
+
+    <div class="text" id="text">
+        2020
+    </div>
+  <div class="left">
+    <div class="title" data-index="0">Kenny Rogers:Life Is Like a Song</div>
+    <div class="title" data-index="1">John Prine:Chicago 70</div>
+    <div class="title" data-index="2">Joe Diffie:All in the Same Boat</div>
+  </div>
+  <div class="right">
+    <div class="slider">
+      <div class="slide"></div>
+      <div class="slide"></div>
+      <div class="slide"></div>
+    </div>
+  </div>
+
+  <script>
+    const titles = document.querySelectorAll('.title');
+    const slider = document.querySelector('.slider');
+    const slides = document.querySelectorAll('.slide');
+    let currentIndex = 0;
+
+    function updateActiveTitle() {
+      titles.forEach((title, index) => {
+        if (index === currentIndex) {
+          title.classList.add('active');
+        } else {
+          title.classList.remove('active');
+        }
+      });
+    }
+
+    function slideTo(index) {
+      slider.style.transform = `translateX(-${index * 100}%)`;
+      currentIndex = index;
+      updateActiveTitle();
+    }
+
+    titles.forEach((title, index) => {
+      title.addEventListener('click', () => {
+        slideTo(index);
+      });
+    });
+
+    let autoSlide = setInterval(() => {
+      currentIndex = (currentIndex + 1) % slides.length;
+      slideTo(currentIndex);
+    }, 3000);
+  </script>
+</body>
+</html>

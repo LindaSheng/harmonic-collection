@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2018</title>
+  <style>
+    @font-face {
+      font-family: 'Bold';  
+      src: url('Montserrat-Bold.ttf');  
+    }
+    @font-face {
+      font-family: 'Medium';  
+      src: url('Montserrat-Medium.ttf');  
+    }
+
+    .return {
+      cursor: url(images/cursor1.png), auto;
+    }
+    .return:hover {
+      color: rgb(137, 188, 255);
+    }
+    .next-year {
+      cursor: url(images/cursor1.png), auto;
+    }
+    .next-year:hover {
+      color: rgb(137, 188, 255);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      cursor: url(images/cursor.png), auto;
+      background: linear-gradient(rgba(255, 255, 255, 0.656), rgb(255, 255, 255)), url('images/BB4.jpg') repeat center;
+    }
+
+    a {
+      text-decoration: none;
+      color: black;
+    }
+
+    .heading {
+      display: flex;
+      justify-content: space-between;
+      font-family: 'Bold';
+      font-size: 20px;
+      z-index: 999;
+      position: absolute;
+      top: 0px;
+      transition: 0.3s ease;
+      padding: 20px;
+      width: 95vw;
+      color: black;
+    }
+
+    body {
+      font-family: 'Arial', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      height: 100vh;
+      background-color: rgb(220, 222, 215);
+      overflow: hidden;
+      color: #333;
+      position: relative;
+      background: linear-gradient(rgba(255, 255, 255, 0.656), rgb(255, 255, 255)), url('images/BB4.jpg') repeat center;
+    }
+
+    h1 {
+      position: fixed;
+      font-family: 'Bold';
+      padding: 0;
+      top: 0;
+      left: 0;
+      font-size: 500px;
+      color: #95b88b;
+      opacity: 0.5;
+      z-index: 0;
+    }
+
+    .container {
+      position: relative;
+      width: 100%;
+      height: 100%;
+    }
+
+    .image-wrapper {
+      position: absolute;
+      width: 300px;
+      height: 200px;
+      overflow: hidden;
+      transform: scale(1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      opacity: 0.85;
+      cursor: pointer;
+    }
+
+    .image-wrapper:hover {
+      transform: scale(1.5);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+      cursor: url(images/cursor1.png), auto;
+    }
+
+    .image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: opacity 0.5s ease;
+      cursor: url(images/cursor1.png), auto;
+      mix-blend-mode: multiply;
+      border-radius: 15px;
+    }
+
+    .color-block {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #000;
+      opacity: 1;
+      transition: opacity 0.5s ease;
+      border-radius: 12px;
+    }
+
+    button {
+      font-family: 'Medium';
+      position: absolute;
+      padding: 12px 24px;
+      bottom: 50px;
+      right: 50px;
+      color: #9da777;
+      font-size: 200px;
+      cursor: url(images/cursor1.png), auto;
+      transition: all 0.3s ease;
+      background-color: transparent;
+    }
+
+    button:hover {
+      transform: translateY(-10px);
+      color: #dfff5e;
+    }
+
+    button:active {
+      transform: translateY(2px);
+    }
+
+    @media (max-width: 600px) {
+      .image-wrapper {
+        width: 150px;
+        height: 150px;
+      }
+
+      button {
+        font-size: 16px;
+        padding: 10px 20px;
+      }
+
+      h1 {
+        font-size: 28px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="heading">
+    <a href="../entry4/index.html"><div class="return">Return To Year Selector</div></a>
+    <div><span style="color:rgb(238, 211, 0)">#</span></div>
+    <div>2018</div>
+    <a href="../entry2/"><div class="next-year">2019</div></a>
+  </div>
+
+  <h1>2018</h1>
+
+  <div class="container">
+    <div class="image-wrapper" style="top: 27%; left: 40%;" id="image1" data-url="https://open.spotify.com/album/6GDaEPN935WkElYXTR6Ejd">
+      <img src="images/1.jpg" alt="Image 1" class="image">
+      <div class="color-block" style="background-color: #ddffa7;"></div>
+    </div>
+    <div class="image-wrapper" style="top: 30%; left: 70%;" id="image2" data-url="https://open.spotify.com/album/2I7bN0vjfoFw9di77xAZ4Y?autoplay=true">
+      <img src="images/2.jpg" alt="Image 2" class="image">
+      <div class="color-block" style="background-color: #405b52;"></div>
+    </div>
+    <div class="image-wrapper" style="top: 70%; left: 35%;" id="image3" data-url="https://open.spotify.com/album/1cWJUvXYMpNTIp7WD1aap4">
+      <img src="images/3.jpg" alt="Image 3" class="image">
+      <div class="color-block" style="background-color: #608567;"></div>
+    </div>
+    <div class="image-wrapper" style="top: 50%; left: 10%;" id="image4" data-url="https://open.spotify.com/track/2PX8RMGplR2AlH230JPO3X">
+      <img src="images/4.jpg" alt="Image 4" class="image">
+      <div class="color-block" style="background-color: #c5ff33;"></div>
+    </div>
+  </div>
+
+  <button id="reveal-btn">Click</button>
+
+  <script>
+    document.getElementById('reveal-btn').addEventListener('click', function() {
+      const colorBlocks = document.querySelectorAll('.color-block');
+      const imageWrappers = document.querySelectorAll('.image-wrapper');
+
+      imageWrappers.forEach(function(wrapper) {
+        wrapper.style.pointerEvents = 'none';
+      });
+      
+      colorBlocks.forEach(function(block) {
+        block.style.opacity = 1;
+      });
+      
+      const randomIndex = Math.floor(Math.random() * colorBlocks.length);
+      colorBlocks[randomIndex].style.opacity = 0;
+
+      const selectedImage = imageWrappers[randomIndex];
+      selectedImage.style.pointerEvents = 'auto';
+
+      selectedImage.addEventListener('click', function() {
+        const url = selectedImage.getAttribute('data-url');
+        window.location.href = url;
+      });
+    });
+  </script>
+</body>
+</html>
+

@@ -5,6 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>entry3</title>
     <style>
+        @font-face {
+      font-family: 'Bold';  
+      src: url('Montserrat-Bold.ttf');  
+    }
+    @font-face {
+      font-family: 'Medium';  
+      src: url('Montserrat-Medium.ttf'); 
+     }
+        a {
+    text-decoration: none;
+        }
+        html{
+        cursor: url(cursor.png),auto;
+    }
         body {
             margin: 0;
             height: 100vh;
@@ -15,7 +29,7 @@
         }
         .one{
             color: rgb(0, 0, 0);
-           font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+           font-family:'Bold';
            font-size:50px;
            position: absolute; 
            margin-top: 0;
@@ -31,7 +45,7 @@
         .two{
             position: absolute; 
             color:rgb(228, 233, 255);
-            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family:'Bold';
             font-size: 20px;
             width:300px;
             margin-top: 200px;
@@ -48,7 +62,7 @@
         .type{
             position: absolute; 
             color: rgb(6, 74, 158);
-            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family:'Bold';
             font-size: 30px;
             margin-top: 270px;
             left: 40px;
@@ -88,32 +102,16 @@
         }
         #www{
             transition: transform 0.3s ease;
+            background-color: azure;
+            height:70px;
+            padding: 20px;
+            border-radius: 50px;
+            font-family:'Bold';
         }
         #www:hover{
             transform: scale(1.2);
-            color: rgb(255, 255, 255);
-        }
-
-        #eee{
-            transition: transform 0.3s ease;
-        }
-        #eee:hover{
-            transform: scale(1.2);
-            color: rgb(255, 255, 255);
-        }
-        #rrr{
-            transition: transform 0.3s ease;
-        }
-        #rrr:hover{
-            transform: scale(1.2);
-            color: rgb(255, 255, 255);
-        }
-        #ttt{
-            transition: transform 0.3s ease;
-        }
-        #ttt:hover{
-            transform: scale(1.2);
-            color: rgb(255, 255, 255);
+            color:antiquewhite;
+            cursor: url(cursor1.png),auto;
         }
     
 
@@ -140,12 +138,9 @@
     </div>
 
     <div class="type">
-        <b>
-       <div id="www"> <p1>American pop</p1><br><br></div>
-        <div id="eee"><p2>Euro pop</p2><br><br></div>
-        <div id="rrr"><p3>Asia</p3><br><br></div>
-        <div id="ttt"><p4>Other</p4></div>
-        </b>
+        <a href="entry4/index.html">
+            <b><div id="www"> <p1>Click To Start</p1><br><br></div></b>
+        </a>
     </div>
 </body>
 </html>

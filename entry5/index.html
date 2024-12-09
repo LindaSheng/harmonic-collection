@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive Blocks</title>
+  <style>
+    @font-face {
+      font-family: 'Bold';  
+      src: url('Montserrat-Bold.ttf');  
+    }
+    @font-face {
+      font-family: 'Medium';  
+      src: url('Montserrat-Medium.ttf');  
+    }
+
+    html {
+        cursor: url(images/cursor.png), auto;
+    }
+    
+    a {
+      text-decoration: none;
+      color: black;
+    }
+    .return {
+      cursor: url(images/cursor1.png), auto;
+    }
+    .return:hover {
+      color: rgb(137, 188, 255);
+    }
+    .next-year {
+      cursor: url(images/cursor1.png), auto;
+    }
+    .next-year:hover {
+      color: rgb(137, 188, 255);
+    }
+    .heading {
+      display: flex;
+      justify-content: space-between;
+      font-family: 'Bold';
+      font-size: 20px;
+      z-index: 999;
+      position: absolute;
+      top: 0px;
+      transition: 0.3s ease;
+      padding: 20px;
+      width: 95vw;
+      color: black;
+    }
+
+    .title{
+        color:#1e90ff;
+        top:80px;
+        font-size:200px;
+        position:fixed;
+        font-family: 'Bold';
+        left: 0;
+        padding:0;
+        mix-blend-mode:difference;
+    }
+    
+    body {
+      margin: 0;
+      padding: 0;
+      display: flex; 
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      align-items: stretch;
+      height: 100vh;
+      width: 100%;
+      background-color: #f0f0f0;
+      gap: 0;
+    }
+
+    .block {
+      flex: 1 1 25%; 
+      height: 100vh;  
+      background-color: #1e90ff; 
+      transition: transform 0.3s ease, background-color 0.3s ease;
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+    }
+
+    .block:nth-child(1) {
+      background-image: url(images/1-1.jpg);
+      background-size: 500px;
+      mix-blend-mode:multiply;
+    }
+
+    .block:nth-child(2) {
+     background-image: url(images/2-1.jpg);
+      background-size: 400px;
+      mix-blend-mode:multiply;
+    }
+
+    .block:nth-child(3) {
+        background-image: url(images/3-1.jpg);
+      background-size: 379px;
+      mix-blend-mode:multiply;
+    }
+
+    .block:nth-child(4) {
+        background-image: url(images/4-1.jpg);
+      background-size: 500px;
+      mix-blend-mode:multiply;
+    }
+
+    .block img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 0;
+      transition: opacity 0.3s ease, transform 0.3s ease;
+      mix-blend-mode: multiply;
+    }
+
+    .block:hover img {
+      opacity:1;
+      transform: scale(1.05);
+      cursor: url(images/cursor.png), auto;
+    }
+
+    .block:hover {
+      background-color: transparent;
+      cursor: url(images/cursor.png), auto;
+    }
+
+    @media (max-width: 768px) {
+      .block {
+        flex: 1 1 100%;
+        height: 25vh; 
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="block" data-url="https://open.spotify.com/album/2OKkpHD1UMUfMbD6yWWuRE?autoplay=true">
+  <img src="images/1.jpg" alt="Music Image">
+</div>
+<div class="block" data-url="https://open.spotify.com/album/5ryqY5iZyAkVtvFn8JuEq6">
+  <img src="images/2.jpg" alt="Music Image">
+</div>
+<div class="block" data-url="https://www.youtube.com/watch?v=eyZvBDv63fc">
+  <img src="images/3.jpg" alt="Music Image">
+</div>
+<div class="block" data-url="https://open.spotify.com/album/5MucFNOwJmLF9p0TyozyUP?autoplay=true">
+  <img src="images/4.jpg" alt="Music Image">
+</div>
+
+<div class="heading">
+    <a href="../entry4/index.html"><div class="return">Return To Year Selector</div></a>
+    <div><span style="color:rgb(238, 211, 0)">#</span></div>
+    <div>2022</div>
+    <a href="../entry6/index.html"><div class="next-year">2023</div></a>
+  </div>
+  <div class="title">
+    <div>2022</div>
+</div>
+
+<script>
+  document.querySelectorAll('.block').forEach(block => {
+    block.addEventListener('click', () => {
+      const url = block.getAttribute('data-url');
+      window.open(url, '_blank');
+    });
+  });
+</script>
+
+</body>
+</html>
+
+
+
+
+
+

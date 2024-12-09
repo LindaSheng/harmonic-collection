@@ -13,9 +13,13 @@
     font-family: 'Medium';  
     src: url('Montserrat-Medium.ttf');  
     }
-    html{
-        cursor: url(images/cursor.png),auto;
-    }
+        html{
+            cursor: url(images/cursor.png),auto;
+        }
+        a {
+        text-decoration: none;
+        color:black;
+            }
         body{
             background-color: rgb(224, 224, 224);
             
@@ -50,6 +54,7 @@
             transition:0.3s ease;
             padding:20px;
             width: 95vw;
+            color:black;
         }
         .return{
              cursor: url(images/cursor1.png),auto;
@@ -60,6 +65,9 @@
         .next-year:hover{
             color: rgb(137, 188, 255);
 
+        }
+        .next-year{
+          cursor: url(images/cursor1.png),auto;
         }
 
         .text{
@@ -178,7 +186,7 @@
             z-index: 1002;
             font-family:'Bold';
             cursor: url(images/cursor1.png),auto;
-            color:rgb(223, 210, 21);
+            color:rgb(0, 0, 0);
 
         }
 
@@ -190,10 +198,10 @@
     <div class="background-two"></div>
 
     <div class="heading">
-        <div class="return">Return To Year Selector</div>
+        <a href="../entry4/index.html"><div class="return">Return To Year Selector</div></a>
         <div><span style="color:rgb(238, 211, 0)">#</span></div>
         <div> 2023</div>
-        <div class="next-year">2016</div>
+        <a href="../entry1/index.html"><div class="next-year">2017</div></a>
     </div>
 
     <div class="text" id="text">
